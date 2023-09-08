@@ -105,15 +105,14 @@ public class TraductorEN extends javax.swing.JFrame {
 
     private void jBTraducirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTraducirActionPerformed
         String palabra = jTEspaniol.getText().toLowerCase();
-        
-        for(Map.Entry<String, String> espaniol : diccionario.entrySet()){
-            if(espaniol.getKey().equals(palabra)){
-                jTIngles.setText(espaniol.getValue());
-                return;
+        String traduccion = diccionario.get(palabra);
+
+            if(traduccion!=null){
+                jTIngles.setText(traduccion);
             }else{
                 jTIngles.setText("No se encontro la palabra");
             }
-        }
+
     }//GEN-LAST:event_jBTraducirActionPerformed
 
     /**
